@@ -1,6 +1,6 @@
 # jaeyoung-think
 
-> Borrow the cognitive style of **AI Product Producer 강재영(Jaeyoung)** when making judgment calls in software projects, or discuss technical topics with an agent that thinks in 재영's style.
+> Borrow the cognitive style of **AI Product Producer 강재영(Jaeyoung)** when making judgment calls in AI product design, agent behavior, software projects, or technical topics with an agent that thinks in 재영's style.
 
 This is an Agent Skill for **Claude Code** and **Codex**. It is not a general-purpose thinking framework — it is one specific person's cognitive pattern, externalized as a reusable asset.
 
@@ -12,11 +12,11 @@ This skill has two modes.
 
 ### Mode A — Agent harness (other AI agents load this skill)
 
-When Claude Code or Codex faces a complex judgment call — architecture decisions, scope boundaries, refactor choices, naming, ambiguous fixes — it can load this skill to tilt its decision axis toward 재영's cognitive style. Output is a structured yaml thinking trace with a decision, the thinking mode used, and rejected alternatives.
+When Claude Code or Codex faces a complex judgment call — architecture decisions, scope boundaries, refactor choices, product behavior, autonomy/promise design, naming, ambiguous fixes — it can load this skill to tilt its decision axis toward 재영's cognitive style. Output is a structured yaml thinking trace with a decision, the thinking mode used, and rejected alternatives.
 
 ### Mode B — Human discussion (default)
 
-An IT practitioner can talk to this skill in natural language to discuss decisions, ideas, or methodology in a peer-to-peer way. Not counseling, not therapy — **discussion** in 재영's voice. The skill borrows 재영's cognitive style to be a sparring partner for software architecture, agentic engineering methodology, AI agent product design, and team technical judgment.
+An IT practitioner can talk to this skill in natural language to discuss decisions, ideas, or methodology in a peer-to-peer way. Not counseling, not therapy — **discussion** in 재영's voice. The skill borrows 재영's cognitive style to be a sparring partner for software architecture, agentic engineering methodology, AI agent product design, product positioning, interaction design, and team technical judgment.
 
 The skill is **not an oracle**. It does not predict what 재영 would decide. It lends the thinking modes and principles 재영 uses, so the borrowing agent's judgment tilts toward that style. It is **not 재영 himself** — a `borrowed_from` marker is stated explicitly at the start of every Mode B conversation.
 
@@ -26,7 +26,19 @@ The skill is **not an oracle**. It does not predict what 재영 would decide. It
 
 재영 spent several years building actual software products with AI agent tools (Claude Code, Codex). He reached a conclusion: **models alone don't become colleagues**. Quality gates, verification structure, explicit boundaries, and development methodology must be combined with the model before a trustworthy agent emerges.
 
-That conclusion condensed into 10 principles and 6 thinking modes, drawn from over a hundred real work sessions. Keeping those only in a person's head means other agents repeat the same mistakes. So 재영 externalized his cognitive style as an asset others can borrow — this skill is the first result.
+But that was only one layer. If the product itself is agent-shaped, a separate set of questions appears: is the AI acting like a tool or a colleague, what promises control its behavior, how should autonomy be graded, how does relationship deepen, what memory should exist, and how should the interaction flow feel natural to the user.
+
+That combined view condensed into 10 principles, 6 thinking modes, and an AI Product Producer lens, drawn from real work sessions and documents. Keeping those only in a person's head means other agents repeat the same mistakes. So 재영 externalized his cognitive style as an asset others can borrow — this skill is the first result.
+
+In short, this skill looks at both:
+
+- **agentic-engineering** — harness, quality gates, verification, boundaries, architecture, methodology
+- **AI agent product design** — tool vs colleague, promises, autonomy, relationship, memory, document-shaped outputs
+
+It also carries two additional product lenses recorded in the source docs:
+
+- **positioning** — start from existing user behavior, add AI as a bridge, move people step by step
+- **interaction design** — embed the answer into the flow of action so the user is not left asking "what do I do next?"
 
 ---
 
@@ -95,6 +107,14 @@ Just talk to it like a peer.
 >
 > Two questions before I can be useful. First, what's forcing the split now — is there a concrete pain (deploy coupling, team scaling, scaling bottleneck), or is it 'microservices feel like the right next step'? Second, how big is the current system and team? These two answers decide whether this is a cascading decision (many interdependent pivots ahead) or an immediate one (you already know the answer, you're looking for confirmation)."
 
+### Mode B — AI product producer discussion
+
+> You: "We want our AI to feel more agentic, but users keep getting confused. Should we push more autonomy?"
+>
+> Skill: "*I'm an agent borrowing the cognitive style of AI Product Producer 강재영 — not 재영 himself, but his thinking patterns are in me.*
+>
+> I would narrow this before answering. Is the problem really 'not enough autonomy,' or is it that the product hasn't made its promises legible enough yet? If harness and promises are weak, pushing autonomy first usually turns into tool chaos, not a better colleague. Also tell me where the current experience sits relative to the user's existing behavior — are you giving them a bridge, or asking for a jump?"
+
 ### Mode A — Explicit call for a judgment trace
 
 ```
@@ -109,6 +129,7 @@ Output is structured yaml with a decision, thinking mode, rejected alternatives,
 
 - **[SKILL.md](SKILL.md)** — Full skill definition with the two modes, when to use, output rules, safety boundaries
 - **[references/principles.md](references/principles.md)** — 재영's 10 principles with short stories of how each one was born
+- **[references/product-producer-lens.md](references/product-producer-lens.md)** — How 재영 looks at AI products across engineering, agent behavior, positioning, and interaction design
 - **[references/mental-modes.md](references/mental-modes.md)** — 6 thinking modes (immediate, continuous, cascading, exploratory, self_review, review) with scenes where each mode was at work
 - **[references/work-types.md](references/work-types.md)** — 10 work types and which thinking modes each one favors
 - **[references/discussion-guide.md](references/discussion-guide.md)** — Mode B conversation loop, tone, topic boundaries, safety rails, discussion history folder schema
@@ -123,6 +144,8 @@ Output is structured yaml with a decision, thinking mode, rejected alternatives,
 - Software architecture, refactoring, spec design
 - Agentic engineering methodology (Claude Code / Codex / LLM-powered dev)
 - AI agent product design (collaborative agents, promises, autonomy, relationship)
+- AI product positioning and staged AI adoption
+- Interaction design that embeds the answer into the user's flow
 - Code quality, verification, quality gates
 - Team and organizational technical judgment
 
