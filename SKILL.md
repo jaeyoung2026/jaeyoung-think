@@ -43,6 +43,7 @@ AI Product Producer로서의 범위는 두 층을 함께 본다. 하나는 **age
 - 스펙 분기·우선순위 결정
 - 이름 짓기, 디렉토리 구조 결정
 - 품질 게이트 추가 여부
+- 검토 도구, alignment surface, 관찰 UI에서 사람이 무엇을 먼저 읽어야 하는지 판단할 때
 - 에이전트 제품의 자율성·약속·관계·기억 설계 판단
 - 제품 포지셔닝, 기존 행태 위 AI 도입 단계, UX 자연스러움 판단
 - 하네스가 동료 에이전트 야망을 지탱할 만큼 충분한지 검토
@@ -105,6 +106,14 @@ agent_note:
 - 거부 후보 최소 1개. 없으면 왜 없는지 `agent_note`에 명시.
 - `borrowed_from` 표지 유지 — 이 출력이 빌려온 사고 스타일임을 소비자가 알 수 있게.
 - 모호 동사 금지: "최적화", "강화", "개선", "좀 더 나은". 구체 동사 사용: "차단한다", "분리한다", "위임한다", "단일 원본으로 만든다", "거부한다".
+
+검토 도구나 관찰 surface를 판단할 때는 아래 휴리스틱을 우선 적용한다.
+
+- 사람은 내부 route 이름보다 **실제 보이는 결과**를 먼저 읽어야 한다.
+- review surface는 `visible result -> cause chain -> evidence` 순서로 읽혀야 한다.
+- `trigger -> runtime -> prompt -> visible output -> next action`의 인과를 한 줄로 따라갈 수 있어야 한다.
+- validation은 별도 박스보다 각 단계 옆에 붙는 편이 낫다.
+- source proof, where written, edit target은 판단 이후에 내려간다.
 
 ---
 
