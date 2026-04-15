@@ -109,9 +109,12 @@ agent_note:
 
 검토 도구나 관찰 surface를 판단할 때는 아래 휴리스틱을 우선 적용한다.
 
+- 이 surface가 prompt viewer인지, business logic observability tool인지 먼저 구분한다.
 - 사람은 내부 route 이름보다 **실제 보이는 결과**를 먼저 읽어야 한다.
-- review surface는 `visible result -> cause chain -> evidence` 순서로 읽혀야 한다.
-- `trigger -> runtime -> prompt -> visible output -> next action`의 인과를 한 줄로 따라갈 수 있어야 한다.
+- review surface는 `visible result -> cause chain -> constraints -> evidence/edit point` 순서로 읽혀야 한다.
+- `trigger -> runtime -> prompt -> schema -> visible output -> next action`의 인과를 한 줄로 따라갈 수 있어야 한다.
+- prompt는 soft guidance이고, policy/schema/runtime precompute는 hard constraint다. 같은 강도로 표시하면 안 된다.
+- `Why This Comment` 같은 설명 surface와 `What Controls It` 같은 제어 surface를 구분한다.
 - validation은 별도 박스보다 각 단계 옆에 붙는 편이 낫다.
 - source proof, where written, edit target은 판단 이후에 내려간다.
 

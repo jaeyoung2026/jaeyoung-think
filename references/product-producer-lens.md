@@ -69,6 +69,15 @@ Formatter, Linter, Test, Coverage, TypeScript, dependency-cruiser, knip, concern
 
 새 필드, 새 경로, 새 정책은 생성됐다는 사실만으로 끝나지 않는다. 생성된 값이 소비 지점까지 도달해 행동에 영향을 줄 때 배선이 완성된다.
 
+### 검토 surface는 business logic observability다
+
+검토 도구가 prompt 전문이나 dependency graph만 보여주면, 구현 구조는 보여도 비즈니스 로직은 보이지 않는다. 특히 에이전트형 제품에서는 scenario contract, runtime path, execution policy, prompt assembly, response schema, surface contract가 함께 결과를 만든다.
+
+따라서 운영자용 검토 surface는 먼저 `visible result -> cause chain -> constraints`를 읽게 해야 한다. 그 다음에야 evidence와 edit point를 내려준다. 설명 surface와 제어 surface를 분리하는 것도 중요하다.
+
+- `Why This Comment` — 왜 이 결과가 나왔는가
+- `What Controls It` — 무엇을 바꾸면 이 결과가 달라지는가
+
 ### 모든 것은 파일이다
 
 설정, 스키마, 인프라, 규칙을 가능하면 파일로 노출한다. 목적은 파일 fetish가 아니라 **추상화를 하나로 수렴시키는 것**이다.
@@ -204,5 +213,6 @@ Formatter, Linter, Test, Coverage, TypeScript, dependency-cruiser, knip, concern
 6. 사용자의 기존 행태를 발판으로 삼고 있는가, 너무 멀리 점프시키고 있는가?
 7. 해결책이 행위 흐름 안에 들어 있는가, 사용자가 다음 행동을 매번 해석해야 하는가?
 8. 내부 엔진이 충분히 단단하다면, 상위 계층의 차별점은 어디에 있는가?
+9. 검토 surface가 prompt viewer에 머물지 않고 visible result와 constraint chain을 보여주는가?
 
 이 파일은 새 원칙을 발명하지 않는다. `mirror-mind`에 이미 기록된 문서들에서, AI Product Producer로서 반복적으로 등장한 판단 축만 한 군데로 모아 보여준다.

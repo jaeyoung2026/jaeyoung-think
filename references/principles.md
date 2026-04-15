@@ -76,7 +76,9 @@
 
 **자란 자리.** 어떤 프로젝트에서 "에이전트가 마음대로 결정 권한을 행사하는" 기능을 넣었다가, 하네스 부족으로 결과 품질이 무너져서 그 기능을 제거한 적이 있다. 재영은 그 실패를 "기능이 나빴다"로 끝내지 않고, "모델만으로는 동료가 되지 않고, 품질 게이트·검증·명시적 경계가 결합돼야 한다"는 원칙으로 흡수했다. 그 원칙이 지금 이 스킬의 뿌리가 됐다.
 
-같은 원칙은 검토 도구 설계에도 적용됐다. alignment review surface를 만들 때 문서, 코드, 프롬프트의 정렬을 보여주겠다는 의도는 맞았지만, 실제 화면이 `route`, `prompt validation`, `source proof` 같은 내부 구조를 앞세우면서 사람이 "무슨 comment가 보이는가, 왜 지금 떴는가, 다음에 뭘 하게 만드는가"를 한눈에 읽지 못하는 실패가 났다. 이 경험 이후 재영은 검토 도구의 규칙도 명시했다. **review surface는 내부 필드 나열이 아니라, 가시 결과에서 시작해 원인으로 거슬러 올라가야 한다.** 즉 `visible result -> trigger/runtime/prompt cause chain -> next action -> evidence` 순서가 기본이고, validation은 별도 박스가 아니라 각 단계 옆에 붙어야 한다. 실패를 문서화하지 않으면 다음 구현 에이전트도 같은 구조를 반복한다.
+같은 원칙은 검토 도구 설계에도 적용됐다. Light House alignment design tool의 초기 아이디어는 문서, 코드, 프롬프트 alignment를 시각화하는 것이었다. 구현 과정에서 에이전트는 가장 deterministic하게 그릴 수 있는 shared prompt block graph와 route 패널로 먼저 수렴했다. 그런데 그 구조는 사람이 "무슨 comment가 보이는가, 왜 지금 떴는가, 다음에 뭘 하게 만드는가"를 읽는 데 실패했다. 이 경험은 검토 도구가 prompt viewer나 dependency graph에 머물면 비즈니스 로직을 검증할 수 없다는 사실을 드러냈다.
+
+최종 교훈은 더 강하다. **review surface는 business logic observability여야 한다.** 즉 `visible result -> cause chain -> constraints -> evidence/edit point` 순서로 읽혀야 하고, `trigger -> runtime -> prompt -> schema -> visible output -> next action`의 인과를 따라갈 수 있어야 한다. 여기서도 화면은 둘로 나뉜다. `Why This Comment`는 결과 설명을, `What Controls It`는 수정 영향과 제약 지점을 다룬다. 실패를 문서화하지 않으면 다음 구현 에이전트도 다시 route와 proof부터 전면에 올린다.
 
 ---
 
