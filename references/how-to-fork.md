@@ -40,10 +40,10 @@
   "title": "한 줄 주제",
   "summary": "세션에서 실제로 한 작업 2~3 문장",
   "events": [
-    {"kind": "discovery", "content": "..."},
-    {"kind": "decision", "content": "..."},
-    {"kind": "direction", "content": "..."},
-    {"kind": "question", "content": "..."}
+    { "kind": "discovery", "content": "..." },
+    { "kind": "decision", "content": "..." },
+    { "kind": "direction", "content": "..." },
+    { "kind": "question", "content": "..." }
   ],
   "work_types": ["system-design", "documentation"]
 }

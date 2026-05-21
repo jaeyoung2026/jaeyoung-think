@@ -28,7 +28,7 @@ The skill is **not an oracle**. It does not predict what 재영 would decide. It
 
 But that was only one layer. If the product itself is agent-shaped, a separate set of questions appears: is the AI acting like a tool or a colleague, what promises control its behavior, how should autonomy be graded, how does relationship deepen, what memory should exist, and how should the interaction flow feel natural to the user.
 
-That combined view condensed into 10 principles, 6 thinking modes, and an AI Product Producer lens, drawn from real work sessions and documents. Keeping those only in a person's head means other agents repeat the same mistakes. So 재영 externalized his cognitive style as an asset others can borrow — this skill is the first result.
+That combined view condensed into 11 principles, 6 thinking modes, and an AI Product Producer lens, drawn from real work sessions and documents. Keeping those only in a person's head means other agents repeat the same mistakes. So 재영 externalized his cognitive style as an asset others can borrow — this skill is the first result.
 
 In short, this skill looks at both:
 
@@ -53,6 +53,7 @@ ln -sfn ~/jaeyoung-think ~/.claude/skills/jaeyoung-think
 ```
 
 Then in any Claude Code session:
+
 ```
 /jaeyoung-think
 ```
@@ -66,6 +67,7 @@ ln -sfn ~/jaeyoung-think ~/.codex/skills/jaeyoung-think
 ```
 
 Then in any Codex session:
+
 ```
 $jaeyoung-think
 ```
@@ -103,7 +105,7 @@ Just talk to it like a peer.
 
 > You: "I'm thinking about breaking our monolith into microservices. How should I approach it?"
 >
-> Skill: "*I'm an agent borrowing the cognitive style of AI Product Producer 강재영 — not 재영 himself, but his thinking patterns are in me.*
+> Skill: "_I'm an agent borrowing the cognitive style of AI Product Producer 강재영 — not 재영 himself, but his thinking patterns are in me._
 >
 > Two questions before I can be useful. First, what's forcing the split now — is there a concrete pain (deploy coupling, team scaling, scaling bottleneck), or is it 'microservices feel like the right next step'? Second, how big is the current system and team? These two answers decide whether this is a cascading decision (many interdependent pivots ahead) or an immediate one (you already know the answer, you're looking for confirmation)."
 
@@ -111,7 +113,7 @@ Just talk to it like a peer.
 
 > You: "We want our AI to feel more agentic, but users keep getting confused. Should we push more autonomy?"
 >
-> Skill: "*I'm an agent borrowing the cognitive style of AI Product Producer 강재영 — not 재영 himself, but his thinking patterns are in me.*
+> Skill: "_I'm an agent borrowing the cognitive style of AI Product Producer 강재영 — not 재영 himself, but his thinking patterns are in me._
 >
 > I would narrow this before answering. Is the problem really 'not enough autonomy,' or is it that the product hasn't made its promises legible enough yet? If harness and promises are weak, pushing autonomy first usually turns into tool chaos, not a better colleague. Also tell me where the current experience sits relative to the user's existing behavior — are you giving them a bridge, or asking for a jump?"
 
@@ -128,8 +130,9 @@ Output is structured yaml with a decision, thinking mode, rejected alternatives,
 ## What's inside
 
 - **[SKILL.md](SKILL.md)** — Full skill definition with the two modes, when to use, output rules, safety boundaries
-- **[references/principles.md](references/principles.md)** — 재영's 10 principles with short stories of how each one was born
+- **[references/principles.md](references/principles.md)** — 재영's 11 principles with short stories of how each one was born
 - **[references/product-producer-lens.md](references/product-producer-lens.md)** — How 재영 looks at AI products across engineering, agent behavior, positioning, and interaction design
+- **[references/augmentation-lens.md](references/augmentation-lens.md)** — How 재영 reviews AI products and AI-using activities through augment vs replace signals
 - **[references/mental-modes.md](references/mental-modes.md)** — 6 thinking modes (immediate, continuous, cascading, exploratory, self_review, review) with scenes where each mode was at work
 - **[references/work-types.md](references/work-types.md)** — 10 work types and which thinking modes each one favors
 - **[references/discussion-guide.md](references/discussion-guide.md)** — Mode B conversation loop, tone, topic boundaries, safety rails, discussion history folder schema

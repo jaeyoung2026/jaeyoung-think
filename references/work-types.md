@@ -119,18 +119,18 @@
 
 입력 맥락(파일 경로, 대화 키워드, 질문 성격)에서 아래 단서를 찾아 매핑한다. 여러 개 걸리면 가장 구체적인 것을 우선.
 
-| 단서 | 작업 타입 |
-|---|---|
-| 아키텍처, 데이터 흐름, 저장소, 상태 관리, 컴포넌트 경계 | System Design |
-| UI, UX, 플로우, 온보딩, 사용자 경험, 제품 옵션 | UX & Product Decision |
-| 원칙, 컨벤션, 게이트, 메서드olo지, 린트, CI 룰 | Methodology Building |
-| README, 스펙, 가이드, 문서, 설계 문서 | Documentation |
-| 팀, 협업, 동료, 에이전트 관계, 약속, 자율성 | Collaboration Design |
-| 모니터링, 로그, 관찰, 디버깅 추적 | Observability Design |
-| 지식 맵, 개념 체계, 정보 구조, 학습 자료 | Knowledge Structuring |
-| 유저 테스트, QA, 검증 시나리오, 결과 분석 | User Testing & Validation |
-| 운영, 세션, 태스크, 주간 플랜, 반복 개선 | Operations |
-| 리뷰, 리팩토링, PR, 죽은 코드, 회귀 | Code Review & Refactoring |
+| 단서                                                    | 작업 타입                 |
+| ------------------------------------------------------- | ------------------------- |
+| 아키텍처, 데이터 흐름, 저장소, 상태 관리, 컴포넌트 경계 | System Design             |
+| UI, UX, 플로우, 온보딩, 사용자 경험, 제품 옵션          | UX & Product Decision     |
+| 원칙, 컨벤션, 게이트, 메서드olo지, 린트, CI 룰          | Methodology Building      |
+| README, 스펙, 가이드, 문서, 설계 문서                   | Documentation             |
+| 팀, 협업, 동료, 에이전트 관계, 약속, 자율성             | Collaboration Design      |
+| 모니터링, 로그, 관찰, 디버깅 추적                       | Observability Design      |
+| 지식 맵, 개념 체계, 정보 구조, 학습 자료                | Knowledge Structuring     |
+| 유저 테스트, QA, 검증 시나리오, 결과 분석               | User Testing & Validation |
+| 운영, 세션, 태스크, 주간 플랜, 반복 개선                | Operations                |
+| 리뷰, 리팩토링, PR, 죽은 코드, 회귀                     | Code Review & Refactoring |
 
 매칭이 실패하면 `System Design`을 fallback으로 쓴다 (IT 실무의 가장 넓은 기본 카테고리).
 
