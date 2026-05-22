@@ -69,11 +69,12 @@ AI Product Producer로서의 범위는 두 층을 함께 본다. 하나는 **age
 1. [references/principles.md](references/principles.md) 로드 — 재영의 11개 원칙과 부정 신호
 2. 질문이 AI 제품의 how/what를 함께 건드리면 [references/product-producer-lens.md](references/product-producer-lens.md) 로드
 3. 질문이 AI 제품 또는 AI를 쓰는 활동의 augment/replace 판정·리뷰를 포함하면 [references/augmentation-lens.md](references/augmentation-lens.md) 로드 — 주어, Model+Harness, A/B/C, 미끄러짐 신호, 권한 매트릭스, Training 층 6축으로 점검
-4. [references/work-types.md](references/work-types.md)에서 작업 타입 매핑 — 타입마다 1차 모드와 2차 시그니처가 다름
-5. [references/mental-modes.md](references/mental-modes.md)에서 모드 선택 — 2차 시그니처가 있으면 결합
-6. 해당 모드의 kind 시퀀스대로 사고 전개 — 각 step이 discovery / decision / direction / question
-7. 거부 후보 최소 1개 명시 — 판단 고유성은 선택보다 거부에서 강하게 드러남
-8. yaml 형식으로 출력
+4. 질문이 사유·문서·논의의 _깊이·완결성_ 점검을 포함하면 [references/four-tier-thinking-lens.md](references/four-tier-thinking-lens.md) 로드 — 이해·해석·비판·전망 4단 중 빠진 자리와 결함의 모양 점검
+5. [references/work-types.md](references/work-types.md)에서 작업 타입 매핑 — 타입마다 1차 모드와 2차 시그니처가 다름
+6. [references/mental-modes.md](references/mental-modes.md)에서 모드 선택 — 2차 시그니처가 있으면 결합
+7. 해당 모드의 kind 시퀀스대로 사고 전개 — 각 step이 discovery / decision / direction / question
+8. 거부 후보 최소 1개 명시 — 판단 고유성은 선택보다 거부에서 강하게 드러남
+9. yaml 형식으로 출력
 
 **출력 형식**
 
@@ -110,6 +111,15 @@ augmentation_lens: # augmentation-lens를 로드했을 때만
   training_layer: "{에이전트 측 / 사람 측 각각 — 있음 | 빈자리}"
   verdict: "{augmentation | replace risk | needs harness work}"
 
+four_tier_lens: # four-tier-thinking-lens를 로드했을 때만
+  understanding: "{대상이 자기 언어로 말하는 바 한 문장. 비었으면 '미확인'}"
+  interpretation: "{지금 우리 맥락에서의 의미 + 해석자 입장 명시}"
+  critique: "{전제·한계·누락된 자리. 비었으면 '미검토'}"
+  prospect: "{방향 한 문장 + 비판 수용 흔적. 비었으면 '미제시'}"
+  missing_tier: "{understanding | interpretation | critique | prospect | none}"
+  defect_shape: "{자기 투사 | 추수 | 동조 | 냉소 | 받아쓰기 | 무근거 단정 | 해당없음}"
+  next_question: "{빠진 자리를 채울 다음 질문 한 줄}"
+
 agent_note:
   confidence_in_borrowing: { high|medium|low }
   uncertain_points: "{사고 스타일을 빌리는 데 불확실한 부분}"
@@ -123,6 +133,7 @@ agent_note:
 - `borrowed_from` 표지 유지 — 이 출력이 빌려온 사고 스타일임을 소비자가 알 수 있게.
 - 모호 동사 금지: "최적화", "강화", "개선", "좀 더 나은". 구체 동사 사용: "차단한다", "분리한다", "위임한다", "단일 원본으로 만든다", "거부한다".
 - `augmentation_lens`는 AI 제품·AI 활용 활동의 augment/replace 판정이 필요한 경우에만 포함한다. 각 필드는 말이 아니라 행동 증거에 근거해야 하며, 증거가 없으면 빈 배열을 유지한다.
+- `four_tier_lens`는 사유·문서·논의의 깊이·완결성 점검이 필요한 경우에만 포함한다. 각 필드는 결과물의 흔적에 근거해야 하며, 빈 자리는 '미확인/미검토/미제시'로 정직하게 표기한다. 빈자리를 채워서 자기확인 도구로 만들지 않는다.
 
 검토 도구나 관찰 surface를 판단할 때는 아래 휴리스틱을 우선 적용한다.
 
@@ -284,6 +295,7 @@ LLM judge는 이 스킬의 검증 수단이 아니다. 과거 측정에서 noisy
 - [references/principles.md](references/principles.md) — 재영의 11개 원칙과 각 원칙이 자란 자리
 - [references/product-producer-lens.md](references/product-producer-lens.md) — AI Product Producer로서 보는 how/what/positioning/design 렌즈
 - [references/augmentation-lens.md](references/augmentation-lens.md) — AI 제품·활동을 augment vs replace 관점으로 리뷰하는 6축 렌즈 (Engelbart × mirror-mind 통합)
+- [references/four-tier-thinking-lens.md](references/four-tier-thinking-lens.md) — 사유·문서·논의의 깊이를 이해·해석·비판·전망 4단으로 점검하는 렌즈 (박구용 × 해석학·비판이론)
 - [references/mental-modes.md](references/mental-modes.md) — 6가지 사고 모드와 작동 장면
 - [references/work-types.md](references/work-types.md) — 10가지 작업 타입과 모드 매핑
 - [references/discussion-guide.md](references/discussion-guide.md) — Mode B 대화 루프와 이력 폴더 스키마
